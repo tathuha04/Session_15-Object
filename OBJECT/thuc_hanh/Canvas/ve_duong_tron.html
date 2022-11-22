@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ve_duong_tron</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="200" height="200" style="border:10px solid #099c06;">Your browser does not support the HTML5 canvas tag.</canvas>
+    <script>
+        let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(100, 100, 50, 0, 2 * Math.PI);  //phai, tren duoi , duong kinh...
+            ctx.stroke();
+    </script>
+</body>
+</html>
