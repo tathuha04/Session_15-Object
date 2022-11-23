@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+
+<body>
+    <script>
+        // cách 1
+
+        // b1 xây dựng lớp
+        function Rectangle(width, height) {
+            //b2  khai báo và khởi tạo thuộc tính
+            this.width = width
+            this.height = height
+
+            // b3
+            this.Area = function Area(width, height) {
+                let dientich = width * height;
+                console.log("diện tích hình chữ nhật", dientich);
+
+            }
+
+            this.Perimeter = function Perimeter(width, height) {
+                let chuvi = (width + height) * 2;
+                console.log("chu vi hình chữ nhật : ", chuvi);
+            }
+        }
+
+        let Area1 = new Rectangle(50, 20);
+        // b4 thay đổi width & height
+        let Area2 = new Rectangle(70, 30);
+
+
+        Area1.Area(50, 20);
+        Area1.Perimeter(50, 20);
+
+        // b5 hiển thị lại diện tích và chu vi
+
+        Area2.Area(70, 30);
+        Area2.Perimeter(70, 30)
+    </script>
+
+    <canvas id="myCanvas" width="200" height="100" style="border:3px solid #000000;">
+    </canvas>
+
+
+    <!-- cách 2 -->
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+    <script>
+        // các cách khởi tạo đối tượng
+
+
+        // 1/ khởi tạo literal
+
+        let student1 = {};
+        let student2 = {
+            // thuộc tính đối tuọng
+            name: "Tạ thu hà",
+            age: 18,
+            address: "phu tho",
+            // hành vi đối tượng
+            hello: function talk() {
+                console.log("xin chào");
+            },
+
+
+        }
+        sum: function add(num1, num2) {
+            return num1 + num2;
+
+        }
+
+
+
+        ///2 khởi tạo đối tượng qua constructor
+        let person = new Object()
+        console.log("persoin:", person);
+
+
+        ///3 khởi tạo đối tượng qua hàm tĩnh của object
+        let book1 = Object.create({});
+        console.log("book1", book1);
+
+        let book2 = Object.create({});
+        console.log("book2", book2);
+
+        // cách truy xuất vào các đặc điểm và hành vi của đối tượng
+
+
+        ///- khởi tạo giá trị cho các đặc điểm của ddooois tượng person
+
+        person.name = " tạ thu hà";
+        person.age = 19;
+        person.love = function love(){
+            console.log("ilu");
+        }
+
+
+        //// 
+
+
+        
+    </script>
+
+
+</body>
+
+</html>
