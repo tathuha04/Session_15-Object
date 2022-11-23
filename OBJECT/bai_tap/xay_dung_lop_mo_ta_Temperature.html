@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+
+<body>
+<p id="Fahrenheit"></p>
+<p id="Kelvin"></p>
+</body>
+<script>
+    function Temperature(Celsius) {
+        this.Celsius = Celsius
+
+        this.CelsiusToFahrenheit = function CelsiusToFahrenheit() {
+            return 9 / 5 * Celsius + 32;
+        }
+        this.CelsiusToKelvin = function CelsiusToKelvin() {
+            return Celsius + 273.15;
+        }        
+    }
+    let doi = new Temperature(25);
+
+    document.getElementById("Fahrenheit").innerHTML = "25 độ C =" + doi.CelsiusToFahrenheit() + " độ F";
+    document.getElementById("Kelvin").innerHTML = " 25 độ C =" + doi.CelsiusToKelvin() + " độ K";
+
+</script>
+
+</html>
