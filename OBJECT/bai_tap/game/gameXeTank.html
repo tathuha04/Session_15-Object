@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="onPageLoad()">
+    <img id="tank" src="https://dongchinh-game-tank.netlify.app/image/tank.png" width="60" height="60">
+
+    <img id="boom" src="https://dongchinh-game-tank.netlify.app/image/boom.png" width="60" height="60">
+</body>
+
+<script>
+
+    //Hàm được chạy mỗi khi trang web được tải
+    function onPageLoad() {
+        window.addEventListener("keydown", moveSelection);
+    }
+
+    var tank = document.getElementById("tank");
+    var boom = document.getElementById("boom");
+
+    // KHỞI TẠO VỊ TRÍ CHO CÁC HÌNH ẢNH
+    function init() {
+        // - 1.Khởi tạo vị trí cho xe tank
+        tank.style.position = "relative";
+        tank.style.top = '0px';
+        tank.style.left = '0px';
+
+        // - 2.Khởi tạo vị trí cho quả boom
+        boom.style.position = "relative";
+        boom.style.top = Math.floor(Math.random() * 190) + 'px';
+        boom.style.left = Math.floor(Math.random() * 190) + 'px';
+    }
+    init();
+
+
+    // Hàm quy định sự kiện keydown cho các hàm
+    function moveSelection(event) {
+        switch (event.keyCode) {
+            case 37:
+                onMoveLeft();
+                break;
+            case 38:
+                onMoveUp();
+                break;
+            case 39:
+                onMoveRight();
+                break;
+            case 40:
+                onMoveDown();
+        }
+        checkCollision();
+
+    }
+
+    // Hàm sự kiện di chuyển lên trên
+    function onMoveUp() {
+        tank.style.top = parseInt(tank.style.top) - 5 + 'px';
+        tank.style.transform = "rotate(0deg)"
+    }
+
+    // Hàm sự kiện di chuyển xuống dưới
+    function onMoveDown() {
+        tank.style.top = parseInt(tank.style.top) + 5 + 'px';
+        tank.style.transform = "rotate(180deg)"
+    }
+
+    // Hàm sự kiện di chuyển sang trái
+    function onMoveLeft() {
+        tank.style.left = parseInt(tank.style.left) - 5 + 'px';
+        tank.style.transform = "rotate(270deg)"
+    }
+
+    // Hàm sự kiện di chuyển sang phải
+    function onMoveRight() {
+        tank.style.left = parseInt(tank.style.left) + 5 + 'px';
+        tank.style.transform = "rotate(90deg)"
+    }
+
+    let check = false;
+    // Hàm check khi 2 hình ảnh va chạm
+    function checkCollision() {
+        let topBoom = parseInt(boom.style.top) - 60 + 'px';
+        if (parseInt(tank.style.top) >= parseInt(topBoom) && parseInt(tank.style.left) >= parseInt(boom.style.left)) {
+            tank.src = 'https://dongchinh-game-tank.netlify.app/image/explosion.png';
+
+            // if (confirm("Game Over. Bạn có muốn chơi lại không?")) {
+            //     window.location.reload();
+            // }
+        }
+    }
+</script>
+
+</html>
